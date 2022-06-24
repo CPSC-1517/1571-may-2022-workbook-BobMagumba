@@ -1,0 +1,36 @@
+﻿@page
+@model WebApp.Pages.Samples.BasicDataManagementModel
+@{
+	// add my tab title for the browser
+		ViewData["Title"] = "Basic Data Management";
+}
+
+<h1>Basic Data Management</h1>
+
+<form method="post">
+	<label>
+		Enter a number <input type="number" asp-for="Num"/>
+	</label>
+
+	<label>
+		This is a text area for a great deal of text
+		<textarea asp-for="MassText" rows="5" cols="100"></textarea>
+	</label>
+	<label>
+		Select a favourite course from the drop down list
+		<select asp-for="FavouriteCourse">
+			<option value="0">Select ...</option>
+			<option value="1008">COMP1008</option>
+			<option value="1012">CPS1012</option>
+			<option value="1017">CPS1017</option>
+			<option value="1517">CPS1517</option>
+
+		</select>
+	</label>
+
+	<button type="submit" id="jsIdentifier" name="RequestObjectIdentifier">
+		Press me A (submit form)
+	</button>
+</form>
+
+@Model.Feedback
