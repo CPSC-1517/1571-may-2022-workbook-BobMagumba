@@ -9,7 +9,7 @@
 
 <form method="post">
 	<label>
-		Enter a number <input type="number" asp-for="Num"/>
+		Enter a number <input type="number" asp-for="Num" />
 	</label>
 
 	<label>
@@ -29,7 +29,11 @@
 	</label>
 
 	<button type="submit" id="jsIdentifier" name="RequestObjectIdentifier">
-		Press me A (submit form)
+		Press me (submit form to default onPost)
+	</button>
+
+	<button type="submit" asp-page-handler="SecondButton">
+		Press you (submit form to specified onPostSecondButton)
 	</button>
 </form>
 

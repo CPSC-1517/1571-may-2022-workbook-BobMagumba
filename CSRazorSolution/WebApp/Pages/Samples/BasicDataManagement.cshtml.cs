@@ -8,10 +8,11 @@ namespace WebApp.Pages.Samples
         [BindProperty]
         public int Num { get; set; }
         public string Feedback { get; set; }
+        public string ErrorMsg { get; set; }
         [BindProperty]
         public int FavouriteCourse { get; set; }
         [BindProperty]
-        public int MassText { get; set; }
+        public string MassText { get; set; }
         public void OnGet()
         {
             if (Num == 0)
@@ -32,6 +33,22 @@ namespace WebApp.Pages.Samples
             if (Num == 0)
             {
                 Feedback = "Executing the OnPost method for the the get Requets";
+            }
+            else if (FavouriteCourse == 0)
+            {
+                Feedback = "You did not select a favourite course";
+            }
+            else
+            {
+                Feedback = $"You entered the value {Num} disply by onPost {FavouriteCourse}";
+            }
+        }
+
+        public void OnPostSecondButton()
+        {
+            if (Num == 0)
+            {
+                Feedback = "Executing the OnPostSecondButton method for the the get Requets";
             }
             else
             {

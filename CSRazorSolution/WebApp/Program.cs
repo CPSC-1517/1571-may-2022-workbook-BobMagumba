@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using WestWindSystem;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("WWDB");
+builder.Services.WWBackendDependencies(options => 
+        options.UseSqlServer(connectionString));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
